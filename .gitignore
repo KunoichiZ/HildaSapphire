@@ -1,0 +1,32 @@
+# node_modules
+node_modules/
+
+# dist
+dist/
+
+# .env
+src/lib/data/.env
+src/lib/data/.env.development
+
+# config
+src/config.ts
+
+# DS_Store
+.DS_Store
+
+# error logs
+yarn-error.log
+
+# text documents
+*.rtf
+
+# basic command and test copy file
+src/basic command.ts
+src/commands/Test/test copy.ts
+src/commands/Test/basic command.ts
+
+# stash.patch
+stash.patch
+
+# .orig files
+*.orig
