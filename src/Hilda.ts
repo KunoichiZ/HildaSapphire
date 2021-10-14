@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import '@sapphire/plugin-editable-commands/register';
+import '@sapphire/plugin-logger/register';
 import { LogLevel } from '@sapphire/framework';
 import { HildaClient } from '#lib/HildaClient';
 import { TOKENS } from '#root/config';
@@ -30,6 +31,7 @@ export default class Hilda extends HildaClient {
 		presence: {
 			activities: [{ name: 'Uno', type: 'PLAYING' }] 
 		},
+		loadDefaultErrorListeners: true
 		
 	  });
   
