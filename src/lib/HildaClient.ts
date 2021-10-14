@@ -1,7 +1,7 @@
 /* eslint-disable no-else-return */
 import { container, SapphireClient } from '@sapphire/framework';
-import type { ClientOptions, Guild, Message } from 'discord.js';
-import { PREFIX, PGSQL_DATABASE_HOST, PGSQL_DATABASE_NAME, PGSQL_DATABASE_PORT, PGSQL_DATABASE_URL, PGSQL_DATABASE_USER, DEV, DEV_PREFIX, POOL } from '#root/config';
+import type { ClientOptions, Guild } from 'discord.js';
+import { PGSQL_DATABASE_HOST, PGSQL_DATABASE_NAME, PGSQL_DATABASE_PORT, PGSQL_DATABASE_URL, PGSQL_DATABASE_USER, DEV, DEV_PREFIX, POOL } from '#root/config';
 import SlashCommandStore from '#lib/structures/SlashCommandStore';
 import { Pool } from 'pg';
 
@@ -24,6 +24,7 @@ export class HildaClient extends SapphireClient {
 	}
 
 	public fetchGuildPrefix = async (guild: Guild) => {
+		let prefix = '';
 		if (DEV) return DEV_PREFIX;
 		else {
 			const selectQuery = `SELECT id, prefix FROM guild WHERE id=${guild?.id}`;
@@ -31,17 +32,12 @@ export class HildaClient extends SapphireClient {
 				if (err) {
 					return console.log(err.stack);
 				} else {
-					const { prefix } = res.rows[0];
+					prefix = res.rows[0].prefix;
 					return prefix;
 				}
 			});
 		}
 		return this.options.defaultPrefix!;
-	}
-
-	public fetchPrefix = async (message: Message) => {
-		if (!message.guild) return [PREFIX];
-		return this.fetchGuildPrefix(message.guild);
 	}
 
 	public async login(token?: string) {
