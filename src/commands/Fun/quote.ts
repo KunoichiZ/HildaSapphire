@@ -7,7 +7,7 @@ import { stripIndents } from 'common-tags';
 
 @ApplyOptions<CommandOptions>({
     fullCategory: ['Fun'],
-	description: 'description'
+	description: 'Post a message to your server\'s quote channel'
 })
 export default class QuoteCommand extends HildaCommand {
     public async run(message: Message, args: Args) {
