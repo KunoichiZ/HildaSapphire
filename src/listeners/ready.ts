@@ -26,7 +26,7 @@ export class Ready extends Listener {
 		const discrim = this.container.client.user?.discriminator;
 		const username = this.container.client.user?.username;
 		this.container.logger.info(`Bot is up and running as ${username}#${discrim}!`);
-		this.container.logger.info(this.container.client.options.defaultPrefix)
+		// this.container.logger.info(this.container.client.options.defaultPrefix)
 		this.printBanner();
 		this.printStoreDebugInformation();
 	}
