@@ -1,6 +1,6 @@
 /* eslint-disable no-else-return */
 import { container, SapphireClient } from '@sapphire/framework';
-import type { ClientOptions, Guild } from 'discord.js';
+import type { ClientOptions, Message } from 'discord.js';
 import { PGSQL_DATABASE_HOST, PGSQL_DATABASE_NAME, PGSQL_DATABASE_PORT, PGSQL_DATABASE_URL, PGSQL_DATABASE_USER, DEV, DEV_PREFIX, POOL } from '#root/config';
 import SlashCommandStore from '#lib/structures/SlashCommandStore';
 import { Pool } from 'pg';
@@ -23,11 +23,11 @@ export class HildaClient extends SapphireClient {
 		return versionStr;
 	}
 
-	public fetchGuildPrefix = async (guild: Guild) => {
+	public fetchPrefix = async (message: Message) => {
 		let prefix = '';
 		if (DEV) return DEV_PREFIX;
 		else {
-			const selectQuery = `SELECT id, prefix FROM guild WHERE id=${guild?.id}`;
+			const selectQuery = `SELECT id, prefix FROM guild WHERE id=${message.guild?.id}`;
 			POOL.query(selectQuery, (err, res) => {
 				if (err) {
 					return console.log(err.stack);
