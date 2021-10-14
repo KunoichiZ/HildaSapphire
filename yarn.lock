@@ -247,6 +247,15 @@
     "@skyra/editable-commands" "^2.1.0"
     tslib "^2.3.1"
 
+"@sapphire/plugin-logger@next":
+  version "2.0.0-next.e5359d2a.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/plugin-logger/-/plugin-logger-2.0.0-next.e5359d2a.0.tgz#ac258c7efba96547b4943a720e9dfdfcd9a32182"
+  integrity sha512-0BAQozPW5pjmjfi6Ki3uLd3d/bCDsg7P9lhtuAGZqya3NeR0bEe9nESpOx58ofGtUm3LyLkQYvs8RyKkpImQwg==
+  dependencies:
+    "@sapphire/time-utilities" "^1.4.2"
+    colorette "^2.0.16"
+    tslib "^2.3.1"
+
 "@sapphire/plugin-subcommands@next":
   version "2.0.0-next.cc8fe34.0"
   resolved "https://registry.yarnpkg.com/@sapphire/plugin-subcommands/-/plugin-subcommands-2.0.0-next.cc8fe34.0.tgz#c48e8d2bbedd9f34302131d18b5347087065fee8"
@@ -294,6 +303,13 @@
   dependencies:
     "@sapphire/utilities" "^3.0.0-pr-160.676f855.0"
 
+"@sapphire/time-utilities@^1.4.2":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@sapphire/time-utilities/-/time-utilities-1.4.3.tgz#18f508fb4f8a2e0899734992e6f8d96e373b222c"
+  integrity sha512-AC55nNklE76Xm1POGw24PzPa3oNeuNNOJE+Ndjd8a48ie/0d2JITMc4QTCJT3VB3lh+fOL9hT/jgc+xHd8An8Q==
+  dependencies:
+    "@sapphire/utilities" "^3.0.3"
+
 "@sapphire/time-utilities@next":
   version "1.4.0-next.262cd948.0"
   resolved "https://registry.yarnpkg.com/@sapphire/time-utilities/-/time-utilities-1.4.0-next.262cd948.0.tgz#d19b7a6a6161011b3b90fbe903d92d98dc8f74d5"
@@ -332,6 +348,11 @@
   version "3.0.0-pr-160.676f855.0"
   resolved "https://registry.yarnpkg.com/@sapphire/utilities/-/utilities-3.0.0-pr-160.676f855.0.tgz#9165d68de8845751a2276f6a53c2dbdc293a1c2e"
   integrity sha512-g2Qi+E6rai2WXaDyRCazqWLsOkxF0o103uzo9/+l3utgu4R4xZ7yz5/vfOcla9dQAapX7KlYHrWZENShaFQWjA==
+
+"@sapphire/utilities@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@sapphire/utilities/-/utilities-3.0.3.tgz#7e854dde9489407fbb4a56d0955412d956a93640"
+  integrity sha512-DWjQzXFK8m8STmlTmOS8fi0HI1TUOnAQkbChVyTEhRUQZ3vR0VtiEWpghQRl5j4HwjP0x9Fx1B4JDfmS3+sYrg==
 
 "@sapphire/utilities@next":
   version "2.1.0-next.262cd948.0"
