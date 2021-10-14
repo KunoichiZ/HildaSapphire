@@ -1,7 +1,7 @@
 /* eslint-disable no-else-return */
 import { container, SapphireClient } from '@sapphire/framework';
-import type { ClientOptions, Message } from 'discord.js';
-import { PGSQL_DATABASE_HOST, PGSQL_DATABASE_NAME, PGSQL_DATABASE_PORT, PGSQL_DATABASE_URL, PGSQL_DATABASE_USER, DEV, DEV_PREFIX, POOL } from '#root/config';
+import type { Message } from 'discord.js';
+import { PGSQL_DATABASE_HOST, PGSQL_DATABASE_NAME, PGSQL_DATABASE_PORT, PGSQL_DATABASE_URL, PGSQL_DATABASE_USER, DEV, DEV_PREFIX, POOL, CLIENT_OPTIONS } from '#root/config';
 import SlashCommandStore from '#lib/structures/SlashCommandStore';
 import { Pool } from 'pg';
 
@@ -9,8 +9,8 @@ export class HildaClient extends SapphireClient {
 	public ownerID: string | undefined = undefined;
 	private _version = [0, 0, 0];
 
-	public constructor(options?: ClientOptions) {
-		super(options as ClientOptions);
+	public constructor() {
+		super(CLIENT_OPTIONS);
 		this.stores.register(new SlashCommandStore());
 	}
 
@@ -37,7 +37,7 @@ export class HildaClient extends SapphireClient {
 				}
 			});
 		}
-		return this.options.defaultPrefix!;
+		return prefix;
 	}
 
 	public async login(token?: string) {
