@@ -122,7 +122,7 @@
 // }
 
 import { Command, CommandOptions, PieceContext } from "@sapphire/framework";
-import type { ApplicationCommandData, Awaited, CommandInteraction } from "discord.js";
+import type { ApplicationCommandData, Awaitable, CommandInteraction } from "discord.js";
 import { sep } from "path";
 
 export abstract class HildaSlashCommand extends Command {
@@ -153,7 +153,7 @@ export abstract class HildaSlashCommand extends Command {
 		return this.fullCategory[1] ?? 'General';
 	}
 
-	public abstract slashRun(interaction: CommandInteraction): Awaited<unknown>;
+	public abstract slashRun(interaction: CommandInteraction): Awaitable<unknown>;
 }
 
 export namespace CustomCommand {
