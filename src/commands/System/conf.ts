@@ -10,6 +10,7 @@ import { Guild, Message, MessageEmbed } from 'discord.js';
 
 @ApplyOptions<SubCommandPluginCommandOptions>({
 	aliases: ['cws'],
+	fullCategory: ['System'],
 	description: 'A basic command with some subcommands',
 	subCommands: ['set', 'help', 'keys', { input: 'show', default: true }],
     preconditions: ['OwnerOnly', 'AdminOnly', 'ModeratorOnly'],
@@ -156,7 +157,7 @@ export class ConfCommand extends SubCommandPluginCommand {
 	}
 
     private async resolveValue(guild: Guild, key: string, value: string) {
-		console.log(key)
+		// console.log(key)
 		switch (key) {
 			case 'prefix': {
                 if (value.length > 5) throw 'Prefix invalid. Prefixes cannot be longer than 5 characters.';
