@@ -9,7 +9,7 @@ import HildaCommand from '#lib/HildaCommand';
     description: 'Chants HIL-DA HIL-DA' 
 })
 export default class HildaChantCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const hilda = this.container.client.emojis.cache.find(emoji => emoji.name === "HildaCheer");
         message.channel.send(`${hilda} HIL-DA HIL-DA ${hilda}`);
         

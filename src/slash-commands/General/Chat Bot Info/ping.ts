@@ -15,7 +15,7 @@ export default class PingSlashCommand extends HildaSlashCommand {
         });
     }
 
-    async run(message: Message) {
+    async messageRun(message: Message) {
 		const sent = await message.channel.send('Pinging...');
 		const ping = sent.createdTimestamp - message.createdTimestamp;
 		return sent.edit(`Pong! That took ${ping}ms. Latency: ${this.container.client.ws.ping}ms`);

@@ -14,7 +14,7 @@ export class Uno extends HildaSlashCommand {
 		})
 	}
 
-	async run(message: Message) {
+	async messageRun(message: Message) {
 		const imbaby = this.container.client.emojis.cache.find(emoji => emoji.name === "ImBaby");
         
         await message.channel.send(`${imbaby} Everyone has uno, dipshit.`);

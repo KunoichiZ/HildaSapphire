@@ -10,7 +10,7 @@ import { stripIndents } from 'common-tags';
 	description: 'Post a message to your server\'s quote channel'
 })
 export default class QuoteCommand extends HildaCommand {
-    public async run(message: Message, args: Args) {
+    public async messageRun(message: Message, args: Args) {
         const id = message.guild?.id as string;
         const messageID = await args.pick('string');
 		const selectQuery = `SELECT id, quotechannel FROM guild WHERE id=${id}`;

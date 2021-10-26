@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Sends the AhShit image'
 })
 export default class AhShitCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         message.channel.send({ files: ['./src/lib/data/images/ahshit.png'] });
         
     }

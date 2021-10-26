@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'description'
 })
 export default class TestCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const selectQuery = `SELECT id, prefix FROM guild WHERE id=${message.guild?.id}`;
         this.container.database.query(selectQuery, (err, res) => {
 			if (err) {

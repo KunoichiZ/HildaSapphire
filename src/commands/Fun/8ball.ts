@@ -6,11 +6,10 @@ import { predictions } from '#data/predictions';
 
 @ApplyOptions<CommandOptions>({
 	aliases: ['eightball'],
-	fullCategory: ['Misc'],
 	description: 'Ask the eightball a question, get a random response.'
 })
 export default class EightBallCommand extends HildaCommand {
-	public async run(message: Message, args: Args) {
+	public async messageRun(message: Message, args: Args) {
 		const question = await args.rest('string');
 		const hexColor = message.member?.displayHexColor as string;
 		const eightballEmbed = new MessageEmbed()

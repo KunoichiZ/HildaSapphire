@@ -9,7 +9,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Replies with the IS Why gif'
 })
 export default class WhyCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const whyEmbed = new MessageEmbed()
             .setTitle("IS WHY!?")
             .setImage('https://i.imgur.com/dTWvQGO.gif');

@@ -5,11 +5,11 @@ import HildaCommand from '#lib/HildaCommand';
 import { fortunes } from '#data/fortunes';
 
 @ApplyOptions<CommandOptions>({
-	fullCategory: ['Misc'],
+	fullCategory: ['Fun'],
 	description: 'Get a random fortune'
 })
 export default class FortuneCommand extends HildaCommand {
-	public async run(message: Message) {
+	public async messageRun(message: Message) {
 		const obj_keys = Object.keys(fortunes.fortunes);
 		const ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
 		const key = Number(ran_key);

@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Sends the HoesMad image'
 })
 export default class HoesMadCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         message.channel.send({ files: ['./src/lib/data/images/hoesmad.jpg'] });
         
     }

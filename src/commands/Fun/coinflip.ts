@@ -5,11 +5,11 @@ import HildaCommand from '#lib/HildaCommand';
 
 @ApplyOptions<CommandOptions>({
 	aliases: ['coin', 'flip', 'cf'],
-	fullCategory: ['Misc'],
+	fullCategory: ['Fun'],
 	description: 'Flip a coin'
 })
 export default class CoinflipCommand extends HildaCommand {
-	public run(message: Message) {
+	public messageRun(message: Message) {
 		const sides = ['heads', 'tails'];
 		return message.channel.send(`The coin landed on ${sides[Math.floor(Math.random() * sides.length)]}.`);
 	}

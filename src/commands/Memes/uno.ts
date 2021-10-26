@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Replies with "Everyone has uno"'
 })
 export default class UnoCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const imbaby = this.container.client.emojis.cache.find(emoji => emoji.name === "ImBaby");
         return message.channel.send(`${imbaby} Everyone has uno, dipshit.`);
     }

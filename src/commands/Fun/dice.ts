@@ -5,11 +5,11 @@ import HildaCommand from '#lib/HildaCommand';
 
 @ApplyOptions<CommandOptions>({
 	aliases: ['roll', 'die'],
-	fullCategory: ['Misc'],
+	fullCategory: ['Fun'],
 	description: 'Roll a 6-sided die'
 })
 export default class DiceCommand extends HildaCommand {
-	public run(message: Message) {
+	public messageRun(message: Message) {
 		function randomNumber() {
 			const sides = 6;
 			const randomNumber = Math.floor(Math.random() * sides) + 1;

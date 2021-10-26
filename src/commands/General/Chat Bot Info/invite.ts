@@ -5,10 +5,11 @@ import type { CommandOptions } from '@sapphire/framework';
 import type { Message } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
+	fullCategory: ['General', 'Chat Bot Info'],
 	description: 'Displays the invite link of the bot, to invite it to your guild.'
 })
 export class InviteCommand extends HildaCommand {
-	public async run(message: Message) {
+	public async messageRun(message: Message) {
         const invite = this.container.client.invite;
         message.channel.send(`Invite here: ${invite}`);
 		// const msg = await send(message, 'Ping?');

@@ -13,7 +13,7 @@ export class Hello extends HildaSlashCommand {
 		})
 	}
 
-	async run(message: Message) {
+	async messageRun(message: Message) {
 		await message.reply('Hello from normal command')
 	}
 

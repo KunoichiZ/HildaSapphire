@@ -10,7 +10,7 @@ import { stripIndents } from 'common-tags';
     description: 'Sends a parody of Edge of Dawn, Flayn style' 
 })
 export default class FlaynCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const flayn = this.container.client.emojis.cache.find(emoji => emoji.name === "Fish");
         return message.channel.send(stripIndents`Reach for my hand,
         I'll eat more fish ${flayn}`);

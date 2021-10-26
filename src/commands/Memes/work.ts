@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Replies with "You\'re making me work!"'
 })
 export default class WorkCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const imbaby = this.container.client.emojis.cache.find(emoji => emoji.name === "ImBaby");
         return message.channel.send(`${imbaby} You're making me work!`);
     }

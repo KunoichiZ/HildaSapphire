@@ -16,7 +16,7 @@ import { inlineCodeBlock } from '@sapphire/utilities';
 export default class HelpCommand extends HildaCommand {
 	private commands!: CommandStore;
 
-	public async run(message: Message, args: Args) {
+	public async messageRun(message: Message, args: Args) {
 		const commandName = await args.pick('string').catch(() => null);
 
 		if (!commandName) {

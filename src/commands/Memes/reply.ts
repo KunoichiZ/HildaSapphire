@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Replies with a message'
 })
 export default class ReplyCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const hilda = this.container.client.emojis.cache.find(emoji => emoji.name === "HildaCheer");
         return message.channel.send(`Yeah! Who's the best? I'm the best! ${hilda}`);
         

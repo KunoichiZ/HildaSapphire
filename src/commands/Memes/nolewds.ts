@@ -9,7 +9,7 @@ import HildaCommand from '#lib/HildaCommand';
     description: 'Replies with the no lewds image' 
 })
 export default class NoLewdsCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         return message.channel.send({ files: ["./src/lib/data/images/nolewds.png"] });
         
     }

@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Sends the So This Wooper meme'
 })
 export default class SothisCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         message.channel.send({ files: ['./src/lib/data/images/sothis.jpeg'] });
         
     }

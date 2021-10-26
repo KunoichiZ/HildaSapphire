@@ -8,7 +8,7 @@ import HildaCommand from '#lib/HildaCommand';
 	description: 'Dab on them haters'
 })
 export default class DabCommand extends HildaCommand {
-    public async run(message: Message) {
+    public async messageRun(message: Message) {
         const hildab = this.container.client.emojis.cache.find(emoji => emoji.id === "737171025350885506");
         return message.channel.send(`${hildab}`);
         
