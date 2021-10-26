@@ -11,12 +11,12 @@ export const enum Character {
 	Height = '5\'1" (154 cm)',
 	Occupation = 'Student',
 	Faction = 'Golden Deer',
-	StartingClass = 'Noble'
+	StartingClass = 'Noble',
+	Nationality = 'Leicester',
+	Residence = 'Garreg Mach Monastery'
 }
 
 export const Relatives = ['Father, Holst Goneril, Goneril (Ancestor)'];
-export const Nationality = ['Leicester'];
-export const Residence = ['Garreg Mach Monastery'];
 
 export const enum BrandingColors {
 	Primary = 0xfcafb7,
