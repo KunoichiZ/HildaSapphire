@@ -24,20 +24,11 @@ export class HildaClient extends SapphireClient {
 	}
 
 	public fetchPrefix = async (message: Message) => {
-		let prefix = '';
 		if (DEV) return DEV_PREFIX;
-		else {
-			const selectQuery = `SELECT id, prefix FROM guild WHERE id=${message.guild?.id}`;
-			POOL.query(selectQuery, (err, res) => {
-				if (err) {
-					return console.log(err.stack);
-				} else {
-					prefix = res.rows[0].prefix;
-					return prefix;
-				}
-			});
-		}
-		return prefix;
+		const selectQuery = `SELECT id, prefix FROM guild WHERE id=${message.guild?.id}`;
+		const result = await POOL.query(selectQuery);
+		if (result) return result.rows[0].prefix;
+		return this.options.defaultPrefix;
 	}
 
 	public async login(token?: string) {
