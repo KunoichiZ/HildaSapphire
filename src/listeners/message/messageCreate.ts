@@ -7,5 +7,15 @@ export class MessageCreate extends Listener {
 		if (message.webhookId !== null) return;
 		if (message.system) return;
 		if (message.author.bot) return;
+
+        const imbaby = this.container.client.emojis.cache.find(emoji => emoji.name === "ImBaby");
+        if(message.author?.id == '650566385881317376') {
+            if(message.content.startsWith('<:Marianne2:658006511578251266> I don\'t have uno so go fuck off.')) {
+                message.channel.send(`${imbaby} Everyone has uno, dipshit.`)
+            }
+        }
+        if(message.content.startsWith('\\o')) {
+            message.channel.send('o/')
+        }
 	}
 }
